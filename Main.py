@@ -18,4 +18,4 @@ print(sa.MergeSort(array)[:10])
 
 '''
 
-print(sa.SelectionSort([0, 1, 2], False))
+print(sa.quick_sort([0, 1, 2, 1, 0]))

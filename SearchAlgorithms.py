@@ -26,8 +26,25 @@ def insersion_sort(array, asc = True):
     
     return return_array
 
-def QuickSort(array, asc = True):
-    pass
+def quick_sort(array, asc = True):
+    if len(array) < 2:
+        return array
+
+    return_array = []
+    working_array = [item for item in array]
+
+    pivot = working_array[len(working_array) - 1]
+    left_array = []
+    right_array = []
+
+    for i in range(len(working_array) - 1):
+        if (working_array[i] < pivot and asc) or (working_array[i] > pivot and not asc):
+            left_array += [working_array[i]]
+        else:
+            right_array += [working_array[i]]
+
+    return quick_sort(left_array, asc) + [pivot] + quick_sort(right_array, asc)
+
 
 def MergeSort(array, asc = True):
     return_array = []
