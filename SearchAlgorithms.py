@@ -46,7 +46,7 @@ def quick_sort(array, asc = True):
     return quick_sort(left_array, asc) + [pivot] + quick_sort(right_array, asc)
 
 
-def MergeSort(array, asc = True):
+def merge_sort(array, asc = True):
     return_array = []
 
     # Base case
@@ -54,8 +54,8 @@ def MergeSort(array, asc = True):
         return array
     
     # Otherwise, recurse!
-    left_half = MergeSort(array[len(array) // 2:], asc)
-    right_half = MergeSort(array[:len(array) // 2], asc)
+    left_half = merge_sort(array[len(array) // 2:], asc)
+    right_half = merge_sort(array[:len(array) // 2], asc)
 
     # A bit cheeky
     while True:
