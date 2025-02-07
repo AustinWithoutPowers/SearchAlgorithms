@@ -47,7 +47,6 @@ def quick_sort(array, asc = True):
 
     return quick_sort(left_array, asc) + [pivot] + quick_sort(right_array, asc)
 
-
 def merge_sort(array, asc = True):
     return_array = []
 
@@ -74,7 +73,7 @@ def merge_sort(array, asc = True):
     
     return return_array
 
-def HeapSort(array, asc = True):
+def heap_sort(array, asc = True):
     working_array = [item for item in array]
 
     depth = ceil(log(len(working_array) + 1, 2)) # ``` (max_depth ^ 2) - 1 = size ```, so  ``` max_depth = log2(size + 1) ```
@@ -82,8 +81,27 @@ def HeapSort(array, asc = True):
     # Formula for first leaf node is ``` minimum_leaf_node = (max_depth - 1) ^ 2
     # Note, this is the number of the elements, -1 for the element index
 
-def RadixSort(array, asc = True):
-    pass
+    # Honestly going to leave this for now.
+
+def radix_sort(array, asc = True):
+    working_array = array
+    significant_bit_count = None
+
+    for item in working_array:
+        if significant_bit_count is None: # SQL Server habit...
+            significant_bit_count = item
+            continue
+        if (item > significant_bit_count and asc) or (item < significant_bit_count and not asc):
+            significant_bit_count = item
+    
+    int_check = 1
+    while not significant_bit_count / int_check < 1:
+        int_check *= 10
+
+    sorted_dict = {}
+
+    for _ in range(int(log(significant_bit_count, 10)) + 1):
+        pass
 
 def ShellSort(array, asc = True):
     pass

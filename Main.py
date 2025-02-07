@@ -14,8 +14,8 @@ for string in str_array:
 
 print(len(array))
 
-print(sa.MergeSort(array)[:10])
+print(sa.merge_sort(array)[:10])
 
 '''
 
-print(sa.quick_sort([0, 1, 2, 1, 0]))
+print(sa.radix_sort([0, 1, 2, 1, 0, 11]))
