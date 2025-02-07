@@ -1,3 +1,5 @@
+from math import log, ceil
+
 def selection_sort(array, asc = True):
     return_array = []
     working_array = [item for item in array]
@@ -73,7 +75,12 @@ def merge_sort(array, asc = True):
     return return_array
 
 def HeapSort(array, asc = True):
-    pass
+    working_array = [item for item in array]
+
+    depth = ceil(log(len(working_array) + 1, 2)) # ``` (max_depth ^ 2) - 1 = size ```, so  ``` max_depth = log2(size + 1) ```
+
+    # Formula for first leaf node is ``` minimum_leaf_node = (max_depth - 1) ^ 2
+    # Note, this is the number of the elements, -1 for the element index
 
 def RadixSort(array, asc = True):
     pass
